@@ -2411,11 +2411,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
+      "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
       "projectName": "DevIO.API",
-      "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
+      "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
       "packagesPath": "C:\\Users\\pmfrp\\.nuget\\packages\\",
-      "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\obj\\",
+      "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pmfrp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2433,11 +2433,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
-              "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj"
+            "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
+              "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj"
             },
-            "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj": {
-              "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj"
+            "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj": {
+              "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj"
             }
           }
         }

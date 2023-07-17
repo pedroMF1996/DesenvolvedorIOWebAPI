@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj": {}
+    "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj": {}
   },
   "projects": {
-    "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj": {
+    "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
+        "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
         "projectName": "DevIO.API",
-        "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
+        "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
         "packagesPath": "C:\\Users\\pmfrp\\.nuget\\packages\\",
-        "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\obj\\",
+        "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pmfrp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,11 +29,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
-                "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj"
+              "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
+                "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj"
               },
-              "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj": {
-                "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj"
+              "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj": {
+                "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
+    "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
+        "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
         "projectName": "DevIO.Business",
-        "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
+        "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
         "packagesPath": "C:\\Users\\pmfrp\\.nuget\\packages\\",
-        "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\obj\\",
+        "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pmfrp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -137,14 +137,14 @@
         }
       }
     },
-    "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj": {
+    "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj",
+        "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj",
         "projectName": "DevIO.Data",
-        "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj",
+        "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\DevIO.Data.csproj",
         "packagesPath": "C:\\Users\\pmfrp\\.nuget\\packages\\",
-        "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\obj\\",
+        "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pmfrp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -161,8 +161,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
-                "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj"
+              "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
+                "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj"
               }
             }
           }

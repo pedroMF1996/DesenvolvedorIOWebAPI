@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KxMzqszDXn2Nr5gKi/sBoTI6hcrdTAR8zb6uu0oTG2Jm/ZbaaFncqwOM4xJX21I7seT7YtaS7QWlBtT+F3QpAg==",
+  "dgSpecHash": "IFu3fVIjz5UhOIA7++JrUBfAmy1GSjvFXA7kjYX48Hf7Gi/Z323klzT33WKcKcX6kW7AGNusXMMGPb2qJp2Fpw==",
   "success": true,
-  "projectFilePath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
+  "projectFilePath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512"
   ],
