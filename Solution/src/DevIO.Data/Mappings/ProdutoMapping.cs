@@ -18,6 +18,9 @@ namespace DevIO.Data.Mappings
                 .IsRequired()
                 .HasColumnType("varchar(1000)");
 
+            builder.Property(p => p.Valor)
+                .HasColumnType("decimal(10,4)");
+
             builder.Property(p => p.Imagem)
                 .IsRequired()
                 .HasColumnType("varchar(100)");

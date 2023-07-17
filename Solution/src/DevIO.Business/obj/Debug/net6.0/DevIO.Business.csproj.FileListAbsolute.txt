@@ -10,3 +10,15 @@ C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\
 C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Business\obj\Debug\net6.0\refint\DevIO.Business.dll
 C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.pdb
 C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Business\obj\Debug\net6.0\ref\DevIO.Business.dll
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\bin\Debug\net6.0\DevIO.Business.deps.json
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\bin\Debug\net6.0\DevIO.Business.dll
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\bin\Debug\net6.0\DevIO.Business.pdb
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.csproj.AssemblyReference.cache
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.AssemblyInfoInputs.cache
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.AssemblyInfo.cs
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.csproj.CoreCompileInputs.cache
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.dll
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\obj\Debug\net6.0\refint\DevIO.Business.dll
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.pdb
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Business\obj\Debug\net6.0\ref\DevIO.Business.dll
