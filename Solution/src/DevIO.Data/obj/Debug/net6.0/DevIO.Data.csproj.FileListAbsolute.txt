@@ -13,3 +13,18 @@ C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\
 C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\refint\DevIO.Data.dll
 C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.pdb
 C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\ref\DevIO.Data.dll
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\bin\Debug\net6.0\DevIO.Data.deps.json
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\bin\Debug\net6.0\DevIO.Data.dll
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\bin\Debug\net6.0\DevIO.Data.pdb
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\bin\Debug\net6.0\DevIO.Business.dll
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\bin\Debug\net6.0\DevIO.Business.pdb
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.csproj.AssemblyReference.cache
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.AssemblyInfoInputs.cache
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.AssemblyInfo.cs
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.csproj.CoreCompileInputs.cache
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.csproj.CopyComplete
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.dll
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\refint\DevIO.Data.dll
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.pdb
+D:\cursos\DesenvolvedorIOWebAPI\Solution\src\DevIO.Data\obj\Debug\net6.0\ref\DevIO.Data.dll
