@@ -1,0 +1,15 @@
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\bin\Debug\net6.0\DevIO.Data.deps.json
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\bin\Debug\net6.0\DevIO.Data.dll
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\bin\Debug\net6.0\DevIO.Data.pdb
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\bin\Debug\net6.0\DevIO.Business.dll
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\bin\Debug\net6.0\DevIO.Business.pdb
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.csproj.AssemblyReference.cache
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.AssemblyInfoInputs.cache
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.AssemblyInfo.cs
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.csproj.CoreCompileInputs.cache
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.csproj.CopyComplete
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.dll
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\refint\DevIO.Data.dll
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\DevIO.Data.pdb
+C:\Users\pmfrp\Downloads\DB2C2636-0FAD-4369-A195-0E759C2E5FD3-02 - API Completa\01 MinhaAPICompleta 6.0\src\DevIO.Data\obj\Debug\net6.0\ref\DevIO.Data.dll
