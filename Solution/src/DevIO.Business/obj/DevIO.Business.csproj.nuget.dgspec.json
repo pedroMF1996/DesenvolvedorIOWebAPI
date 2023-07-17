@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {}
+    "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {}
   },
   "projects": {
-    "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
+    "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
+        "projectUniqueName": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
         "projectName": "DevIO.Business",
-        "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
+        "projectPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\DevIO.Business.csproj",
         "packagesPath": "C:\\Users\\pmfrp\\.nuget\\packages\\",
-        "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\obj\\",
+        "outputPath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pmfrp\\AppData\\Roaming\\NuGet\\NuGet.Config",
