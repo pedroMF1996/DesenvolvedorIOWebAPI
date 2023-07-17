@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7gwNhav0ZiE0TZ1TgtAZSApfp+kJZ67h0DTiiEYzz4kPavfZPjmMBaVvB45BTiYJTnnQE2QarKUPwJ87xfVOwQ==",
+  "dgSpecHash": "joXYKgDMc2eJmYkiazgmEPUfNaH0rPmwv/vFdmuPGIGJ6q44y1F00hhgDpDrj7lwH+OxyYntbsFW+LrfyJfmxw==",
   "success": true,
-  "projectFilePath": "D:\\cursos\\DesenvolvedorIOWebAPI\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
+  "projectFilePath": "D:\\cursos\\DesenvolvedorIOWebAPI\\Solution\\src\\DevIO.API\\DevIO.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
