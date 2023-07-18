@@ -17,10 +17,8 @@ namespace DevIO.API.Controllers
 
         protected ActionResult CustomResponse(ModelStateDictionary modelState)
         {
-            if (!ModelState.IsValid)
-            {
-                NotificarModelStateInvalida(ModelState);
-            }
+            if (!ModelState.IsValid) NotificarModelStateInvalida(ModelState);
+            
             return CustomResponse();
         }
 
@@ -58,7 +56,7 @@ namespace DevIO.API.Controllers
             }
         }
 
-        private void NotificarErro(string erroMsg)
+        protected void NotificarErro(string erroMsg)
         {
             _notificador.Handle(new Notificacao(erroMsg));
         }

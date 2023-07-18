@@ -15,7 +15,8 @@ namespace DevIO.API.Controllers
 
         public FornecedoresController(IFornecedorRepository fornecedorRepository,
                                       IMapper mapper,
-                                      IFornecedorService fornecedorService)
+                                      IFornecedorService fornecedorService,
+                                      INotificador notificador) : base(notificador) 
         {
             _fornecedorRepository = fornecedorRepository;
             _mapper = mapper;
@@ -48,39 +49,42 @@ namespace DevIO.API.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return CustomResponse(ModelState);
             }
 
             var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
 
             await _fornecedorService.Adicionar(fornecedor);
 
-            return Ok(fornecedorViewModel);
+            return CustomResponse(fornecedorViewModel);
         }
 
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Atualizar(Guid id, FornecedorViewModel fornecedorViewModel)
         {
-            if (id != fornecedorViewModel.Id && !ModelState.IsValid)
+            if (id != fornecedorViewModel.Id)
             {
-                return BadRequest();
+                NotificarErro("O Id informado nao corresponde a query");
+                return CustomResponse(ModelState);
             }
 
-            var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
+            if (!ModelState.IsValid)
+            {
+                return CustomResponse(ModelState);
+            }
 
-            await _fornecedorService.Atualizar(fornecedor);
+            await _fornecedorService.Atualizar(_mapper.Map<Fornecedor>(fornecedorViewModel));
 
-            return Ok(fornecedorViewModel);
+            return CustomResponse(fornecedorViewModel);
         }
-        
         
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<FornecedorViewModel>> Deletar(Guid id)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest();
-            }
+                return CustomResponse(ModelState);
+            } 
 
             var fornecedor = _mapper.Map<Fornecedor>(await ObterFornecedorEndereco(id));
 
@@ -91,9 +95,7 @@ namespace DevIO.API.Controllers
 
             await _fornecedorService.Remover(fornecedor.Id);
 
-            var fornecedorViewModel = _mapper.Map<FornecedorViewModel>(fornecedor);
-
-            return Ok(fornecedorViewModel);
+            return CustomResponse();
         }
 
         private async Task<FornecedorViewModel> ObterFornecedorProdutosEndereco(Guid id)
