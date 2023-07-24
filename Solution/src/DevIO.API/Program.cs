@@ -11,12 +11,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.ResolveDependencies();
-builder.Services.ConfigCors();
 builder.Services.ResolveDbConnections(builder.Configuration);
 builder.Services.Configure<ApiBehaviorOptions>(opt =>
 {
     opt.SuppressModelStateInvalidFilter = true;
 });
+builder.Services.ConfigCors();
 
 
 var app = builder.Build();
@@ -28,7 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors();
+app.UseCors("Development");
 
 app.UseHttpsRedirection();
 

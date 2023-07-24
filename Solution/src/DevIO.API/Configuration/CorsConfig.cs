@@ -1,4 +1,6 @@
-﻿namespace DevIO.API.Configuration
+﻿using Microsoft.Extensions.Options;
+
+namespace DevIO.API.Configuration
 {
     public static class CorsConfig
     {
@@ -6,10 +8,12 @@
         {
             services.AddCors(opt =>
             {
-                opt.AddPolicy("Development",
-                    builder => builder.AllowAnyMethod()
-                                      .AllowAnyOrigin()   
-                                      .AllowAnyHeader());
+            opt.AddPolicy("Development",
+                            builder =>
+                                builder
+                                .AllowAnyOrigin()
+                                .AllowAnyMethod()
+                                .AllowAnyHeader());
             });
             return services;
         }
