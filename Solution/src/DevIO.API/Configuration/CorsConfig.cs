@@ -9,8 +9,7 @@
                 opt.AddPolicy("Development",
                     builder => builder.AllowAnyMethod()
                                       .AllowAnyOrigin()   
-                                      .AllowAnyHeader()
-                                      .AllowCredentials());
+                                      .AllowAnyHeader());
             });
             return services;
         }
