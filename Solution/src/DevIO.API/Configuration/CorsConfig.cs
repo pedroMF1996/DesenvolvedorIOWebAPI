@@ -8,12 +8,12 @@ namespace DevIO.API.Configuration
         {
             services.AddCors(opt =>
             {
-            opt.AddPolicy("Development",
-                            builder =>
-                                builder
-                                .AllowAnyOrigin()
-                                .AllowAnyMethod()
-                                .AllowAnyHeader());
+                opt.AddPolicy("Development",
+                                builder =>
+                                    builder
+                                    .AllowAnyOrigin()
+                                    .AllowAnyMethod()
+                                    .AllowAnyHeader());
             });
             return services;
         }
