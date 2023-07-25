@@ -28,7 +28,7 @@ namespace DevIO.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProdutoViewModel>>> ObterTodos() {
 
-            var produtosFornecedores = _mapper.Map<ProdutoViewModel>(await _produtoRepository.ObterProdutosFornecedores());
+            var produtosFornecedores = _mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores());
             
             if (produtosFornecedores == null) return NotFound();
             
@@ -83,7 +83,7 @@ namespace DevIO.API.Controllers
                 return false;
             }
 
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens", imgNome);
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/app/demo-webapi/src/assets", imgNome);
 
             if (System.IO.File.Exists(filePath))
             {
