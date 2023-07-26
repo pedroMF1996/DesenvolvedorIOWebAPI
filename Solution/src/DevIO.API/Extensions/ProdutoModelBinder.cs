@@ -1,4 +1,4 @@
-﻿using DevIO.Api.ViewModels;
+﻿using DevIO.API.ViewModels;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Text.Json;
 

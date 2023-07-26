@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using DevIO.Api.ViewModels;
 using DevIO.API.ViewModels;
 using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
