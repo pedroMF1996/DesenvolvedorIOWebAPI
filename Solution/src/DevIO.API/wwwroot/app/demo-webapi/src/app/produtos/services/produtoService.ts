@@ -34,7 +34,7 @@ export class ProdutoService extends BaseService {
             .post(this.UrlServiceV1 + 'produtos', produto, super.ObterAuthHeaderJson())
             .pipe(
                 map(super.extractData),
-                catchError(super.serviceError)
+                // catchError(super.serviceError)
             );
     }
 

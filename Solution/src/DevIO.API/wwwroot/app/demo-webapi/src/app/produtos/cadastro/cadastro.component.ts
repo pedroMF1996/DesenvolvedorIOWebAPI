@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Produto } from '../models/Produto';
 import { Fornecedor } from '../models/Fornecedor';
 import { ProdutoService } from '../services/produtoService';
+import { ResultErrorModel } from '../models/Result';
 
 @Component({
   selector: 'app-cadastro',
@@ -16,7 +17,7 @@ export class CadastroComponent implements OnInit {
 
   produtoForm: FormGroup;
   produto: Produto;
-  errors: any[] = [];
+  errors: any[];
   fornecedores: Fornecedor[];
   imagemForm: any;
   imagemNome: string;
@@ -30,11 +31,11 @@ export class CadastroComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private router: Router,
               private produtoService: ProdutoService) {
-
+    this.errors = [];
     this.produtoService.obterFornecedores()
       .subscribe(
-        fornecedores => this.fornecedores = fornecedores,
-        fail => this.errors = fail.errors
+        fornecedores => {this.fornecedores = fornecedores},
+        fail => {this.errors = fail.errors}
       );
 
     this.imagemForm = new FormData();
@@ -63,7 +64,7 @@ export class CadastroComponent implements OnInit {
       this.produtoHandle(produtoForm)
         .subscribe(
           result => { this.onSaveComplete(result) },
-          fail => { this.onError(fail) }
+          fail => { this.onError(fail.error) }
         );
     }
   }
