@@ -48,17 +48,35 @@ namespace DevIO.API.Controllers
         [HttpPost]
         public async Task<ActionResult<ProdutoViewModel>> Adicionar(ProdutoViewModel produtoViewModel)
         {
-            if(!ModelState.IsValid) return CustomResponse(ModelState);
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var imagemNome = Guid.NewGuid() + "_" + produtoViewModel.Imagem;
 
-            if(!UploadArquivo(produtoViewModel.ImagemUpload, imagemNome)) return CustomResponse();
+            if (!UploadArquivo(produtoViewModel.ImagemUpload, imagemNome)) return CustomResponse();
 
             produtoViewModel.Imagem = imagemNome;
 
             await _produtoService.Adicionar(_mapper.Map<Produto>(produtoViewModel));
 
             return CustomResponse(produtoViewModel);
+        }
+
+        [DisableRequestSizeLimit]
+        [HttpPost("Adicionar")]
+        public async Task<ActionResult<ProdutoViewModel>> AdicionarAlternativo(ProdutoImagemViewModel produtoImagemViewModel)
+        {
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
+
+            var prefix = Guid.NewGuid();
+            var imagemNome =  prefix + "_" + produtoImagemViewModel.ImagemUpload.FileName;
+
+            if (!await UploadAlternativo(produtoImagemViewModel.ImagemUpload, imagemNome)) return CustomResponse();
+
+            produtoImagemViewModel.Imagem = imagemNome;
+
+            await _produtoService.Adicionar(_mapper.Map<Produto>(produtoImagemViewModel));
+
+            return CustomResponse(produtoImagemViewModel);
         }
 
         [HttpDelete("{id:guid}")]
@@ -92,6 +110,30 @@ namespace DevIO.API.Controllers
             }
 
             System.IO.File.WriteAllBytes(filePath, imagemDataByteArray);
+            return true;
+        }
+
+        private async Task<bool> UploadAlternativo(IFormFile imagemUpload, string imagemNome)
+        {
+            if (imagemUpload == null || imagemUpload.Length <= 0)
+            {
+                ModelState.AddModelError(string.Empty, "Forneca uma imagem para este produto");
+                return false;
+            }
+
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/app/demo-webapi/src/assets", imagemNome);
+
+            if (System.IO.File.Exists(filePath))
+            {
+                ModelState.AddModelError(string.Empty, "J[a existem um arquivo com este nome");
+                return false;
+            }
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await imagemUpload.CopyToAsync(stream);
+            }
+
             return true;
         }
 
