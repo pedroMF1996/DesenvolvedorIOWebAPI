@@ -79,6 +79,39 @@ namespace DevIO.API.Controllers
             return CustomResponse(produtoImagemViewModel);
         }
 
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> Atualizar(Guid id, ProdutoViewModel produtoViewModel)
+        {
+            if (id != produtoViewModel.Id) {
+                NotificarErro("Os ids informados nao sao iguais");
+                return CustomResponse();
+            }
+
+            var produtoAtualizacao = await ObterProduto(id);
+            produtoViewModel.Imagem = produtoAtualizacao.Imagem;
+            if(!ModelState.IsValid) return CustomResponse(ModelState);
+
+            if(produtoViewModel.ImagemUpload != null)
+            {
+                var imagemName = Guid.NewGuid() +"_"+ produtoViewModel.Imagem;
+                if(!UploadArquivo(produtoViewModel.ImagemUpload, imagemName))
+                {
+                    return CustomResponse(ModelState);
+                }
+
+                produtoAtualizacao.Imagem = imagemName;
+            }
+
+            produtoAtualizacao.Nome = produtoViewModel.Nome;
+            produtoAtualizacao.Descricao = produtoViewModel.Descricao;
+            produtoAtualizacao.Valor = produtoViewModel.Valor;
+            produtoAtualizacao.Ativo = produtoViewModel.Ativo;
+
+            await _produtoService.Atualizar(_mapper.Map<Produto>(produtoAtualizacao));
+
+            return CustomResponse(produtoViewModel);
+        }
+
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<ProdutoViewModel>> ObterProdutoPorFornecedor(Guid id) {
 
