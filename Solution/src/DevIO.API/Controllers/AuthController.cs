@@ -1,23 +1,30 @@
-﻿using DevIO.API.Controllers;
+﻿using DevIO.API.Extensions;
 using DevIO.API.ViewModels;
 using DevIO.Business.Intefaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
-namespace DevIO.API.Configuration
+namespace DevIO.API.Controllers
 {
     [Route("api")]
     public class AuthController : MainController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly AppSettings _appSettings;
 
-        public AuthController(INotificador notificador, 
-                              SignInManager<IdentityUser> signInManager, 
-                              UserManager<IdentityUser> userManager) : base(notificador)
+        public AuthController(INotificador notificador,
+                              SignInManager<IdentityUser> signInManager,
+                              UserManager<IdentityUser> userManager,
+                              IOptions<AppSettings> appSettings) : base(notificador)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _appSettings = appSettings.Value;
         }
 
         [HttpPost("/novaconta")]
@@ -40,7 +47,8 @@ namespace DevIO.API.Configuration
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                return CustomResponse(registerUserViewModel);
+                var token = GerarJWT(user.Email);
+                return CustomResponse(token);
             }
             else
                 foreach (var error in result.Errors)
@@ -60,7 +68,8 @@ namespace DevIO.API.Configuration
 
             if (result.Succeeded)
             {
-                return CustomResponse();
+                var token = GerarJWT(loginUserViewModel.Email);
+                return CustomResponse(token);
             }
 
             if (result.IsLockedOut)
@@ -72,6 +81,25 @@ namespace DevIO.API.Configuration
             NotificarErro("Usuario ou senha incorretos");
 
             return CustomResponse();
+        }
+
+        private async Task<string> GerarJWT(string email)
+        {
+            var TokenHandler = new JwtSecurityTokenHandler();
+            
+            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+
+            var token = TokenHandler.CreateToken(new SecurityTokenDescriptor()
+            {
+                Issuer = _appSettings.Emissor,
+                Audience = _appSettings.ValidoEm,
+                Expires = DateTime.UtcNow.AddHours(_appSettings.ExpiracaoHoras),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            });
+
+            var encodedToken = TokenHandler.WriteToken(token);
+
+            return encodedToken;
         }
     }
 }
