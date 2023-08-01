@@ -1,13 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DevIO.API.Configuration
 {
     public static class ApiConfig
     {
-        public static IServiceCollection UseWebApiConfig(this IServiceCollection services)
+        public static IServiceCollection UseWebApiConfig(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
+            services.AddEndpointsApiExplorer();
+            
+            services.AddIdentityConfiguration(configuration);
+            services.ResolveDbConnections(configuration);
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.ResolveDependencies();
+            services.AddAuthorization(options =>
+            {
+                var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(
+                    JwtBearerDefaults.AuthenticationScheme);
+
+                defaultAuthorizationPolicyBuilder =
+                    defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
+
+                options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
+            });
+
             services.Configure<ApiBehaviorOptions>(opt =>
             {
                 opt.SuppressModelStateInvalidFilter = true;
@@ -24,7 +43,8 @@ namespace DevIO.API.Configuration
             app.UseCors("Development");
             app.UseHttpsRedirection();
             app.UseAuthorization();
-
+            app.UseAuthentication();
+            
             return app;
         }
     }
