@@ -47,7 +47,7 @@ namespace DevIO.API.Controllers
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, isPersistent: false);
-                var token = GerarJWT(user.Email);
+                var token = await GerarJWT(user.Email);
                 return CustomResponse(token);
             }
             else
@@ -68,7 +68,7 @@ namespace DevIO.API.Controllers
 
             if (result.Succeeded)
             {
-                var token = GerarJWT(loginUserViewModel.Email);
+                var token = await GerarJWT(loginUserViewModel.Email);
                 return CustomResponse(token);
             }
 
