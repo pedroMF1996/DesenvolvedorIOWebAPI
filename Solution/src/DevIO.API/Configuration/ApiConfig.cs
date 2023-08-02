@@ -42,8 +42,8 @@ namespace DevIO.API.Configuration
 
             app.UseCors("Development");
             app.UseHttpsRedirection();
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             
             return app;
         }
