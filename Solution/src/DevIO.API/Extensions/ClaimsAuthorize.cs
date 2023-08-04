@@ -45,7 +45,7 @@ namespace DevIO.API.Extensions
 
             if(!CustomAuthorization.ValidarClaimUsuario(context.HttpContext, _claim.Type, _claim.Value))
             {
-                context.Result = new StatusCodeResult(401);
+                context.Result = new StatusCodeResult(403);
             }
         }
     }
