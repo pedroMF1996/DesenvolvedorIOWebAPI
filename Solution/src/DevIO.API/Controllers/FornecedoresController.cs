@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DevIO.API.Controllers
 {
-    [Authorize]
     [Route("api/fornecedores")]
     public class FornecedoresController : MainController
     {

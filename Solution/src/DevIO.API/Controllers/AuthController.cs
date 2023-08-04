@@ -7,6 +7,7 @@ using Microsoft.Extensions.Options;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
 namespace DevIO.API.Controllers
 {
@@ -64,7 +65,10 @@ namespace DevIO.API.Controllers
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            var result = await _signInManager.PasswordSignInAsync(loginUserViewModel.Email, loginUserViewModel.Password, isPersistent: false, lockoutOnFailure: true);
+            var result = await _signInManager.PasswordSignInAsync(loginUserViewModel.Email, 
+                                                                  loginUserViewModel.Password, 
+                                                                  isPersistent: false, 
+                                                                  lockoutOnFailure: true);
 
             if (result.Succeeded)
             {
@@ -85,6 +89,22 @@ namespace DevIO.API.Controllers
 
         private async Task<string> GerarJWT(string email)
         {
+            var user = await _userManager.FindByEmailAsync(email);
+            var claims = await _userManager.GetClaimsAsync(user);
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            claims.Add(new Claim(JwtRegisteredClaimNames.Sub, user.Id));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Email, user.Email));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Nbf, ToUnixEpochDate(DateTime.UtcNow).ToString()));
+
+            foreach (var role in userRoles)
+            {
+                claims.Add(new Claim("role", role));
+            }
+
+            var identityClaims = new ClaimsIdentity(claims);
+
             var TokenHandler = new JwtSecurityTokenHandler();
             
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
@@ -93,6 +113,7 @@ namespace DevIO.API.Controllers
             {
                 Issuer = _appSettings.Emissor,
                 Audience = _appSettings.ValidoEm,
+                Subject = identityClaims,
                 Expires = DateTime.UtcNow.AddHours(_appSettings.ExpiracaoHoras),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             });
@@ -100,6 +121,11 @@ namespace DevIO.API.Controllers
             var encodedToken = TokenHandler.WriteToken(token);
 
             return encodedToken;
+        }
+
+        private static long ToUnixEpochDate(DateTime utcNow)
+        {
+            return (long) Math.Round((utcNow.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
         }
     }
 }

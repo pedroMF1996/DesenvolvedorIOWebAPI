@@ -8,7 +8,6 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace DevIO.API.Controllers
 {
-    [Authorize]
     [Route("api/produtos")]
     public class ProdutosController : MainController
     {
