@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using Microsoft.Net.Http.Headers;
 
 namespace DevIO.API.Configuration
 {
@@ -14,6 +15,15 @@ namespace DevIO.API.Configuration
                                     .AllowAnyOrigin()
                                     .AllowAnyMethod()
                                     .AllowAnyHeader());
+
+                opt.AddPolicy("Production",
+                    builder =>
+                        builder
+                        .WithMethods("GET")
+                        .WithOrigins("http://desenvolvedor.io")
+                        .SetIsOriginAllowedToAllowWildcardSubdomains()
+                        //.WithHeaders(HeaderNames.ContentType,"x-custom-header")
+                        .AllowAnyHeader());
             });
             return services;
         }

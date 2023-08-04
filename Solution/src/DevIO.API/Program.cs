@@ -14,9 +14,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
+    app.UseCors("Development");
 }
 else
 {
+    app.UseCors("Production");
     app.UseHsts();
 }
 
@@ -26,5 +28,4 @@ app.MapControllers();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.Run();

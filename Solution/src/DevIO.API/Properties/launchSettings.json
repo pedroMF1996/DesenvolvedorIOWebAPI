@@ -25,22 +25,22 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "IIS - Dev": {
-        "commandName": "IISExpress",
-        "launchBrowser": true,
-        "launchUrl": "api/fornecedores",
-        "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "Develop"
-        }
-      },
-      "IIS - Prod": {
-        "commandName": "IISExpress",
-        "launchBrowser": true,
-        "launchUrl": "api/fornecedores",
-        "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "Production"
-        }
+      }
+    },
+    "IIS - Dev": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/fornecedores",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Develop"
+      }
+    },
+    "IIS - Prod": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/fornecedores",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
       }
     }
   }
