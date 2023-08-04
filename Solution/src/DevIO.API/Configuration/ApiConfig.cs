@@ -42,8 +42,6 @@ namespace DevIO.API.Configuration
 
             app.UseHttpsRedirection();
             app.UseCors("Development");
-app.MapControllers();
-
             
             return app;
         }
