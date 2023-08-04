@@ -13,10 +13,18 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseHsts();
 }
 
 app.UseMVCConfig();
 
 app.MapControllers();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();

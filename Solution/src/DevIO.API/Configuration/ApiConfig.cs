@@ -40,10 +40,10 @@ namespace DevIO.API.Configuration
         public static IApplicationBuilder UseMVCConfig(this IApplicationBuilder app)
         {
 
-            app.UseCors("Development");
             app.UseHttpsRedirection();
-            app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseCors("Development");
+app.MapControllers();
+
             
             return app;
         }
