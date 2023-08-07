@@ -11,7 +11,9 @@ using System.Security.Claims;
 
 namespace DevIO.API.Controllers
 {
-    [Route("api")]
+    [ApiVersion("2.0")]
+    [ApiVersion("1.0",Deprecated = true)]
+    [Route("api/v{version:apiVersion}")]
     public class AuthController : MainController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -29,7 +31,7 @@ namespace DevIO.API.Controllers
             _appSettings = appSettings.Value;
         }
 
-        [HttpPost("/novaconta")]
+        [HttpPost("novaconta")]
         public async Task<ActionResult> Registrar(RegisterUserViewModel registerUserViewModel)
         {
             if (!ModelState.IsValid)
