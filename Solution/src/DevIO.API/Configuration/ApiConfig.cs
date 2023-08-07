@@ -7,11 +7,7 @@ namespace DevIO.API.Configuration
     public static class ApiConfig
     {
         public static IServiceCollection UseWebApiConfig(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddControllers();
-            services.AddSwaggerGen();
-            services.AddEndpointsApiExplorer();
-            
+        {            
             services.AddIdentityConfiguration(configuration);
             services.ResolveDbConnections(configuration);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
