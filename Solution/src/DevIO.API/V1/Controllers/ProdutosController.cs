@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DevIO.API.Controllers;
 using DevIO.API.ViewModels;
 using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
@@ -6,9 +7,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DevIO.API.Controllers
+namespace DevIO.API.V1.Controllers
 {
-    [Route("api/produtos")]
+    [Authorize]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/produtos")]
     public class ProdutosController : MainController
     {
         private readonly IProdutoRepository _produtoRepository;
@@ -28,22 +31,24 @@ namespace DevIO.API.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProdutoViewModel>>> ObterTodos() {
+        public async Task<ActionResult<IEnumerable<ProdutoViewModel>>> ObterTodos()
+        {
 
             var produtosFornecedores = _mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores());
-            
+
             if (produtosFornecedores == null) return NotFound();
-            
+
             return CustomResponse(produtosFornecedores);
         }
-        
+
         [HttpGet("{id:guid}")]
-        public async Task<ActionResult<IEnumerable<ProdutoViewModel>>> ObterProdutoPorId(Guid id) {
+        public async Task<ActionResult<IEnumerable<ProdutoViewModel>>> ObterProdutoPorId(Guid id)
+        {
 
             var produto = _mapper.Map<ProdutoViewModel>(await ObterProduto(id));
-            
+
             if (produto == null) return NotFound();
-            
+
             return CustomResponse(produto);
         }
 
@@ -70,7 +75,7 @@ namespace DevIO.API.Controllers
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var prefix = Guid.NewGuid();
-            var imagemNome =  prefix + "_" + produtoImagemViewModel.ImagemUpload.FileName;
+            var imagemNome = prefix + "_" + produtoImagemViewModel.ImagemUpload.FileName;
 
             if (!await UploadAlternativo(produtoImagemViewModel.ImagemUpload, imagemNome)) return CustomResponse();
 
@@ -84,19 +89,20 @@ namespace DevIO.API.Controllers
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> Atualizar(Guid id, ProdutoViewModel produtoViewModel)
         {
-            if (id != produtoViewModel.Id) {
+            if (id != produtoViewModel.Id)
+            {
                 NotificarErro("Os ids informados nao sao iguais");
                 return CustomResponse();
             }
 
             var produtoAtualizacao = await ObterProduto(id);
             produtoViewModel.Imagem = produtoAtualizacao.Imagem;
-            if(!ModelState.IsValid) return CustomResponse(ModelState);
+            if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            if(produtoViewModel.ImagemUpload != null)
+            if (produtoViewModel.ImagemUpload != null)
             {
-                var imagemName = Guid.NewGuid() +"_"+ produtoViewModel.Imagem;
-                if(!UploadArquivo(produtoViewModel.ImagemUpload, imagemName))
+                var imagemName = Guid.NewGuid() + "_" + produtoViewModel.Imagem;
+                if (!UploadArquivo(produtoViewModel.ImagemUpload, imagemName))
                 {
                     return CustomResponse(ModelState);
                 }
@@ -115,7 +121,8 @@ namespace DevIO.API.Controllers
         }
 
         [HttpDelete("{id:guid}")]
-        public async Task<ActionResult<ProdutoViewModel>> ObterProdutoPorFornecedor(Guid id) {
+        public async Task<ActionResult<ProdutoViewModel>> ObterProdutoPorFornecedor(Guid id)
+        {
 
             var produto = await ObterProduto(id);
 
@@ -130,7 +137,7 @@ namespace DevIO.API.Controllers
         {
             var imagemDataByteArray = Convert.FromBase64String(arquivo);
 
-            if(arquivo.IsNullOrEmpty())
+            if (arquivo.IsNullOrEmpty())
             {
                 NotificarErro("Forneca uma imagem para este produto!");
                 return false;
