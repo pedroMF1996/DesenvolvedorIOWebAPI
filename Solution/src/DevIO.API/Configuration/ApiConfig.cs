@@ -33,16 +33,35 @@ namespace DevIO.API.Configuration
             });
 
             services.ConfigCors();
+            services.VersionSettings();
 
             return services;
         }
-        
+
         public static IApplicationBuilder UseMVCConfig(this IApplicationBuilder app)
         {
 
             app.UseHttpsRedirection();
-            
+
             return app;
+        }
+
+        private static IServiceCollection VersionSettings(this IServiceCollection services)
+        {
+            services.AddApiVersioning(opt =>
+            {
+                opt.AssumeDefaultVersionWhenUnspecified = true;
+                opt.DefaultApiVersion = new ApiVersion(1, 0);
+                opt.ReportApiVersions = true; 
+            });
+
+            services.AddVersionedApiExplorer(opt =>
+            {
+                opt.GroupNameFormat = "'v'VVV";
+                opt.SubstituteApiVersionInUrl = true;
+            });
+
+            return services;
         }
     }
 }

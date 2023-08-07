@@ -8,7 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DevIO.API.Controllers
 {
-    [Route("api/fornecedores")]
+    [Authorize]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/fornecedores")]
     public class FornecedoresController : MainController
     {
         private readonly IFornecedorRepository _fornecedorRepository;
