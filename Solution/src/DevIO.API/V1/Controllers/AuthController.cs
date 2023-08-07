@@ -8,11 +8,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using DevIO.API.Controllers;
 
-namespace DevIO.API.Controllers
+namespace DevIO.API.V1.Controllers
 {
-    [ApiVersion("2.0")]
-    [ApiVersion("1.0",Deprecated = true)]
+    [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}")]
     public class AuthController : MainController
     {
@@ -68,9 +68,9 @@ namespace DevIO.API.Controllers
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            var result = await _signInManager.PasswordSignInAsync(loginUserViewModel.Email, 
-                                                                  loginUserViewModel.Password, 
-                                                                  isPersistent: false, 
+            var result = await _signInManager.PasswordSignInAsync(loginUserViewModel.Email,
+                                                                  loginUserViewModel.Password,
+                                                                  isPersistent: false,
                                                                   lockoutOnFailure: true);
 
             if (result.Succeeded)
@@ -109,7 +109,7 @@ namespace DevIO.API.Controllers
             var identityClaims = new ClaimsIdentity(claims);
 
             var TokenHandler = new JwtSecurityTokenHandler();
-            
+
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
 
             var token = TokenHandler.CreateToken(new SecurityTokenDescriptor()
@@ -128,7 +128,7 @@ namespace DevIO.API.Controllers
 
         private static long ToUnixEpochDate(DateTime utcNow)
         {
-            return (long) Math.Round((utcNow.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
+            return (long)Math.Round((utcNow.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
         }
     }
 }
