@@ -6,30 +6,17 @@ namespace DevIO.API.Configuration
 {
     public static class ApiConfig
     {
-        public static IServiceCollection UseWebApiConfig(this IServiceCollection services, IConfiguration configuration)
-        {            
-            services.AddIdentityConfiguration(configuration);
-            services.ResolveDbConnections(configuration);
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.ResolveDependencies();
-            services.AddAuthorization(options =>
-            {
-                var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(
-                    JwtBearerDefaults.AuthenticationScheme);
+        public static IServiceCollection AddWebApiConfig(this IServiceCollection services, IConfiguration configuration)
+        {   
+            services.AddControllers();
 
-                defaultAuthorizationPolicyBuilder =
-                    defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
-
-                options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
-            });
-
+            services.VersionSettings();
             services.Configure<ApiBehaviorOptions>(opt =>
             {
                 opt.SuppressModelStateInvalidFilter = true;
             });
 
             services.ConfigCors();
-            services.VersionSettings();
 
             return services;
         }

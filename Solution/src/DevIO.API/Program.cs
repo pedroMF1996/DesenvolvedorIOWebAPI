@@ -1,17 +1,24 @@
 using DevIO.API.Configuration;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
+
+
+builder.Services.ResolveDbConnections(builder.Configuration);
+
+builder.Services.AddIdentityConfiguration(builder.Configuration);
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddWebApiConfig(builder.Configuration);
 
 builder.Services.AddSwaggerConfig();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.UseWebApiConfig(builder.Configuration);
+builder.Services.ResolveDependencies();
 
 var app = builder.Build();
 
@@ -32,8 +39,14 @@ app.UseSwaggerConfig(provider);
 
 app.UseMVCConfig();
 
-app.MapControllers();
 
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+
 app.Run();
