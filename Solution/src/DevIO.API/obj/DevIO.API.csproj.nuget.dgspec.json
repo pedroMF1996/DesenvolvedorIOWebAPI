@@ -109,6 +109,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "elmah.io": {
+              "target": "Package",
+              "version": "[5.0.45, )"
             }
           },
           "imports": [

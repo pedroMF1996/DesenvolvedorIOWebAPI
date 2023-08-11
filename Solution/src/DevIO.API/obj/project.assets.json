@@ -75,6 +75,32 @@
           }
         }
       },
+      "elmah.corelibrary/1.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/Elmah.dll": {}
+        },
+        "runtime": {
+          "lib/Elmah.dll": {}
+        }
+      },
+      "elmah.io/5.0.45": {
+        "type": "package",
+        "dependencies": {
+          "Elmah.Io.Client": "[5.0.66, 6.0.0)",
+          "elmah.corelibrary": "1.2.2"
+        },
+        "compile": {
+          "lib/net45/Elmah.Io.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Elmah.Io.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Elmah.Io.AspNetCore/5.0.56": {
         "type": "package",
         "dependencies": {
@@ -3039,6 +3065,37 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "elmah.corelibrary/1.2.2": {
+      "sha512": "OEx4ds9r2bw2/45VZwfw11lLv4y+mC2FUZxp7LsjmauFxj92K1kx8hafSBvls+V9s0WH0wv84B1LfWN/EaGfkg==",
+      "type": "package",
+      "path": "elmah.corelibrary/1.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "elmah.corelibrary.1.2.2.nupkg.sha512",
+        "elmah.corelibrary.nuspec",
+        "lib/Elmah.dll"
+      ]
+    },
+    "elmah.io/5.0.45": {
+      "sha512": "FyqVtdsw9hbmxfg5YXFA59KRVlqRDgejMRG3xg6rMsRy5Kf7Y2rR+m7fbd80fGGhkBUiAlXyTs10NjbUTYqIeg==",
+      "type": "package",
+      "path": "elmah.io/5.0.45",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "content/web.config.install.xdt",
+        "content/web.config.transform",
+        "elmah.io.5.0.45.nupkg.sha512",
+        "elmah.io.nuspec",
+        "icon.png",
+        "lib/net45/Elmah.Io.dll",
+        "lib/net45/Elmah.Io.xml",
+        "tools/install.ps1"
       ]
     },
     "Elmah.Io.AspNetCore/5.0.56": {
@@ -9179,7 +9236,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.9",
       "Microsoft.IdentityModel.Tokens >= 6.32.1",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.5.0",
+      "elmah.io >= 5.0.45"
     ]
   },
   "packageFolders": {
@@ -9290,6 +9348,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.5.0, )"
+          },
+          "elmah.io": {
+            "target": "Package",
+            "version": "[5.0.45, )"
           }
         },
         "imports": [
@@ -9314,5 +9376,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'elmah.corelibrary 1.2.2' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net7.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "elmah.corelibrary",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'elmah.io 5.0.45' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net7.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "elmah.io",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

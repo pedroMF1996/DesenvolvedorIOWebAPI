@@ -1,4 +1,5 @@
 using DevIO.API.Configuration;
+using DevIO.API.Extensions;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
@@ -39,12 +40,16 @@ else
 var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 app.UseSwaggerConfig(provider);
 
-app.UseMVCConfig();
 
 app.UseLogginConfiguration();
 
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseMVCConfig();
 
 app.Run();
