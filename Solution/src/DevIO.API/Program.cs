@@ -20,6 +20,8 @@ builder.Services.AddSwaggerConfig();
 
 builder.Services.ResolveDependencies();
 
+builder.Services.AddLogginConfiguration();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,14 +41,10 @@ app.UseSwaggerConfig(provider);
 
 app.UseMVCConfig();
 
+app.UseLogginConfiguration();
 
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
 
 app.Run();
