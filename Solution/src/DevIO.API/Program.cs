@@ -1,7 +1,10 @@
 using DevIO.API.Configuration;
 using DevIO.API.Extensions;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,9 +24,11 @@ builder.Services.AddSwaggerConfig();
 
 builder.Services.ResolveDependencies();
 
-builder.Services.AddLogginConfiguration();
+builder.Services.AddLogginConfiguration(builder.Configuration);
 
-var app = builder.Build();
+
+
+var app = builder.Build(); 
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -51,5 +56,25 @@ app.UseAuthorization();
 app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseMVCConfig();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+    endpoints.MapHealthChecks("/api/hc", new HealthCheckOptions()
+    {
+        Predicate = _ => true,
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
+    endpoints.MapHealthChecksUI(options =>
+    {
+        options.UIPath = "/api/hc-ui";
+        options.ResourcesPath = "/api/hc-ui-resources";
+
+        options.UseRelativeApiPath = false;
+        options.UseRelativeResourcesPath = false;
+        options.UseRelativeWebhookPath = false;
+    });
+
+});
 
 app.Run();
