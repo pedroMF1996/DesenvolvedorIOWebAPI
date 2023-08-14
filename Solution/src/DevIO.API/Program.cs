@@ -1,4 +1,5 @@
 using DevIO.API.Configuration;
+using DevIO.API.Extensions;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
@@ -20,6 +21,8 @@ builder.Services.AddSwaggerConfig();
 
 builder.Services.ResolveDependencies();
 
+builder.Services.AddLogginConfiguration();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -37,16 +40,16 @@ else
 var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 app.UseSwaggerConfig(provider);
 
-app.UseMVCConfig();
 
+app.UseLogginConfiguration();
 
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
+app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseMVCConfig();
 
 app.Run();

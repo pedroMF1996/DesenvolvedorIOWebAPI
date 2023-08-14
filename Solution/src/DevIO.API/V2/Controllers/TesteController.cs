@@ -2,6 +2,7 @@
 using DevIO.Business.Intefaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
 
 namespace DevIO.API.V2.Controllers
 {
@@ -13,9 +14,10 @@ namespace DevIO.API.V2.Controllers
         {
         }
         [HttpGet]
-        public string Get()
+        public IActionResult Get()
         {
-            return "Eu sou a versao 2";
+            return BadRequest("I Am the Danger");
+            //return "Eu sou a versao 2";
         }
     }
 }
